@@ -1,0 +1,12 @@
+{
+  "realm": "dev",
+  "auth-server-url": "https://sso.mossoro.rn.gov.br/",
+  "ssl-required": "none",
+  "url": "https://sso.mossoro.rn.gov.br/",
+  "clientId": "login-cidadao",
+  "resource": "login-cidadao",
+  "public-client": true,
+  "verify-token-audience": true,
+  "use-resource-role-mappings": true,
+  "confidential-port": 0
+}

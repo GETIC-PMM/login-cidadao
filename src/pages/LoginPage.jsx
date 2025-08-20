@@ -2,27 +2,37 @@ import React from "react";
 // import images
 import fundo from "../assets/img/fundo.jpg";
 import mossoroDigitalLogo from "../assets/img/mossoro-digital-logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
+  const navigate = useNavigate();
+
+  // React.useEffect(() => {
+  //   // Check if the user is already authenticated
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     // If authenticated, redirect to home
+  //     navigate("/home");
+  //   }
+  // }, [navigate]);
+
+  // Handle login with credentials
   const handleLoginCredentials = () => {
     setIsLoading(true);
-    console.log("Logging in with keycloak...");
-    // chama o serviço do keycloak aqui
+    window.location.href = "/auth?service=keycloak";
     setTimeout(() => {
-      window.location.href = "/home"; // Redireciona para a página inicial após o login
-      // setIsLoading(false);
+      setIsLoading(false);
     }, 2000);
   };
 
   const handleLoginGovBr = () => {
     setIsLoading(true);
-    // Redirect to gov.br login page or handle gov.br login logic
-    console.log("Redirecting to gov.br login...");
+    window.location.href = "/auth?service=govbr";
     setTimeout(() => {
-      window.location.href = "/home"; // Redireciona para a página inicial após o login
-      // setIsLoading(false);
+      setIsLoading(false);
     }, 2000);
   };
 
